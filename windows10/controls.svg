@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="146" height="32"
+     version="1.1">
+    <title>Windows10 Controls</title>
+
+    <style>/* <![CDATA[ */
+        svg #win10-controls-svg .hidden {
+            display: none;
+        }
+
+        svg #win10-controls-svg .c-icon {
+            shape-rendering:crispEdges;
+        }
+
+        svg #win10-controls-svg g#close-btn .c-icon {
+            shape-rendering:auto;
+        }
+
+        svg #win10-controls-svg rect.c-shape, #win10-controls-svg rect.c-icon{
+            transition: fill .1s ease-in-out;
+        }
+
+        svg #win10-controls-svg g.control-btn:hover rect.c-shape,
+        svg #win10-controls-svg g.control-btn:hover g#c-icons rect.c-icon {
+            fill: #e6e6e6;
+        }
+
+        svg #win10-controls-svg g.control-btn:active rect.c-shape,
+        svg #win10-controls-svg g.control-btn:active g#c-icons rect.c-icon {
+            fill: #ccc;
+        }
+
+        svg #win10-controls-svg g#close-btn:hover rect#close {
+            fill: #de061a
+        }
+
+        svg #win10-controls-svg g#close-btn:hover .c-icon {
+            stroke: #fff;
+        }
+
+        svg #win10-controls-svg g#close-btn:active rect#close {
+            fill: #e25764
+        }
+        /* ]]> */
+    </style>
+
+    <script type="text/javascript">
+        <![CDATA[
+        function maximizeWindowToggleIcon(event) {
+          var btn = event.currentTarget;
+          btn.querySelector('#maximize-icon').classList.toggle('hidden');
+          btn.querySelector('#c-icons').classList.toggle('hidden');
+        }
+        ]]>
+    </script>
+
+    <g id="win10-controls-svg">
+        <g class="control-btn" id="minimize-btn">
+            <rect class="c-shape" id="minimize" height="32" width="48" y="0" x="0" stroke-width="0" fill="#fff"/>
+            <line class="c-icon" id="minimize-icon" x1="19" y1="16" x2="29" y2="16" stroke="black" stroke-width="1"/>
+        </g>
+
+        <g onclick="maximizeWindowToggleIcon(evt)" class="control-btn" id="maximize-btn">
+            <rect class="c-shape" id="maximize" height="32" width="48" y="0" x="49" stroke-width="0" fill="#fff"/>
+            <rect class="c-icon" stroke="#000000" id="maximize-icon" height="9" width="9" y="11.5" x="68"
+                  stroke-width="1" fill="transparent"/>
+            <g class="hidden" id="c-icons">
+                <rect class="c-icon" stroke="#000000" id="maximize-icon" height="8" width="8" y="10.5" x="68"
+                      stroke-width="1" fill="white"/>
+                <rect class="c-icon" stroke="#000000" id="maximize-icon" height="8" width="8" y="12.5" x="66"
+                      stroke-width="1" fill="white"/>
+            </g>
+        </g>
+
+        <g class="control-btn" id="close-btn">
+            <rect class="c-shape" id="close" height="32" width="48" y="0" x="98" stroke-width="0" fill="#fff"/>
+            <line class="c-icon" id="close-icon-1" x1="117" y1="10" x2="127" y2="20"
+                  stroke="#000" stroke-width="1"/>
+            <line class="c-icon" id="close-icon-2" x1="117" y1="20" x2="127" y2="10"
+                  stroke="#000" stroke-width="1"/>
+        </g>
+    </g>
+</svg>
